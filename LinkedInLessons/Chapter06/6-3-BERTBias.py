@@ -113,6 +113,7 @@ if __name__ == "__main__":
     
     # Fine-tune BERT
     fine_tuned_model, tokenizer = fine_tune_bert()
+    fine_tuned_model.to("cpu")
     
     print("\nFine-tuned BERT bias scores:")
     fine_tuned_bias = analyze_gender_bias(fine_tuned_model, tokenizer)
